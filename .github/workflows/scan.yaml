@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   generate-matrix:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     if: github.repository == 'crossplane/crossplane'
     outputs:
       versions: ${{ steps.get-releases.outputs.versions}}
@@ -69,7 +69,7 @@ jobs:
 
   check-matrix:
     # this job is just to check the matrix definition is valid and helps debugging it if not valid
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     needs:
       - generate-matrix
     steps:
@@ -93,7 +93,7 @@ jobs:
         image:
           - crossplane/crossplane
 
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - name: Get Release Tag
         run: |
