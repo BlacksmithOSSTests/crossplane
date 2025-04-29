@@ -7,7 +7,7 @@ on:
 jobs:
   checklist-completed:
     if: github.actor != 'crossplane-renovate[bot]'
-    runs-on: ubuntu-22.04
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     steps:
       - uses: mheap/require-checklist-action@efef3b1b39d03d12be5ce427c15064f287ba5843 # v2
         with:
